@@ -20,23 +20,40 @@
 
 ## 安装
 
-> **先看这里**：DSH 从 GitHub 仓库地址安装插件时会调用本机的 `git` 命令。Windows 默认没有 Git，安装会失败，日志里是 `'git' 不是内部或外部命令`。没有 Git 时请用下面的“方式一（无需 Git）”。
+> **在线安装不需要 Git**。DSH 直连 github.com 可能超时（日志里是 `ETIMEDOUT`），这不是没装 Git；用下面的加速地址即可。
 
-### 方式一：tarball 地址安装（无需 Git，推荐）
+### 方式一：在线安装（无需 Git，推荐）
 
 1. 打开侧边栏 **插件（Plugins）**。
 2. 如果之前装过 npm 上的 `dsh-balance-badge`，先卸载它，避免出现两条余额栏。
-3. 点击 **添加插件（Add plugin）**。
-4. 填入仓库 main 分支的源码压缩包地址：
+3. 点击 **添加插件（Add plugin）**，填入：
 
    ```text
-   https://github.com/heshih433-oss/deepseek-harness-balance-badge/archive/refs/heads/main.tar.gz
+   https://cdn.jsdelivr.net/gh/heshih433-oss/deepseek-harness-balance-badge@0.2.0/release/heshih433-oss-dsh-balance-badge-0.2.0.tgz
    ```
 
-   DSH 会把它当作 tarball 安装，不调用 `git`。以后仓库 main 更新后，重新安装同一个地址即可。
-5. 安装完成后点击 **立即启用（Enable now）**。
+   DSH 会把它当作 tarball 安装，不调用 `git`，也不访问 github.com。
+4. 安装完成后点击 **立即启用（Enable now）**。
 
-### 方式二：GitHub 仓库地址（需要本机有 Git）
+备用在线地址（任选其一，都是把 GitHub 源码包套一层加速）：
+
+```text
+https://gh-proxy.com/https://github.com/heshih433-oss/deepseek-harness-balance-badge/archive/refs/heads/main.tar.gz
+https://ghproxy.net/https://github.com/heshih433-oss/deepseek-harness-balance-badge/archive/refs/heads/main.tar.gz
+https://ghfast.top/https://github.com/heshih433-oss/deepseek-harness-balance-badge/archive/refs/heads/main.tar.gz
+```
+
+### 方式二：GitHub 直连 tarball（网络能直连 GitHub 时）
+
+在 **添加插件** 中填入：
+
+```text
+https://github.com/heshih433-oss/deepseek-harness-balance-badge/archive/refs/heads/main.tar.gz
+```
+
+DSH 会把它当作 tarball 安装，不调用 `git`。
+
+### 方式三：GitHub 仓库地址（需要本机有 Git）
 
 1. 先安装 [Git for Windows](https://git-scm.com/download/win)，安装后重启 Harness，确保在终端里能运行 `git --version`。
 2. 在 **添加插件** 中填入：
@@ -48,9 +65,17 @@
    也可以填 `github:heshih433-oss/deepseek-harness-balance-badge`，或本仓库目录的绝对路径（本地开发时）。
 3. 安装完成后点击 **立即启用（Enable now）**。
 
+### 方式四：离线安装包（完全没有网络时）
+
+下载本仓库 `release/` 目录里的 `heshih433-oss-dsh-balance-badge-0.2.0.tgz`，在 **添加插件** 中填入它的绝对路径，例如：
+
+```text
+C:\Users\你的用户名\Downloads\heshih433-oss-dsh-balance-badge-0.2.0.tgz
+```
+
 > 不要填 `dsh-balance-badge` 或 `@heshih433-oss/dsh-balance-badge`：前者会装到 npm 上别人的旧包；后者目前没有发布到 npm，按名字安装会失败。
 
-### 方式三：写入 desktop profile
+### 方式五：写入 desktop profile
 
 把本目录复制到 profile 的 `node_modules/@heshih433-oss/dsh-balance-badge`，并在 `~/.dsh/profiles/desktop/package.json` 的 `dsh.profile.bundles` 中追加 `@heshih433-oss/dsh-balance-badge`，然后让配置热重载（或重启应用）。
 
@@ -75,6 +100,7 @@ dsh-balance-badge/
 ├── lib/
 │   ├── index.js          # Host 侧占位入口
 │   └── client.js         # 余额栏界面与轮询逻辑
+├── release/              # 离线/在线安装用的打包文件
 └── README.md
 ```
 
