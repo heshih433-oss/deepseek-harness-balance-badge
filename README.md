@@ -1,8 +1,10 @@
-# 账户余额栏（dsh-balance-badge）
+# 账户余额栏（@heshih433-oss/dsh-balance-badge）
 
 在 DeepSeek Harness Web 界面底部增加一条常驻的账户余额栏，显示当前登录账号的可用余额、赠送额度、最近刷新时间，并每 15 秒自动刷新一次。
 
 仓库名：`deepseek-harness-balance-badge`
+
+> **安装时注意**：本插件的包名是 `@heshih433-oss/dsh-balance-badge`。npm 上已有一个同名旧包 `dsh-balance-badge`（作者 eatone），它是在右下角显示余额的另一个插件；不要在插件页按 `dsh-balance-badge` 安装，否则装到的是那个旧包。
 
 ## 效果
 
@@ -27,7 +29,7 @@
 
 ### 方式二：写入 desktop profile
 
-把本目录复制到 profile 的 `node_modules`，并在 `~/.dsh/profiles/desktop/package.json` 的 `dsh.profile.bundles` 中追加 `dsh-balance-badge`，然后让配置热重载（或重启应用）。
+把本目录复制到 profile 的 `node_modules/@heshih433-oss/dsh-balance-badge`，并在 `~/.dsh/profiles/desktop/package.json` 的 `dsh.profile.bundles` 中追加 `@heshih433-oss/dsh-balance-badge`，然后让配置热重载（或重启应用）。
 
 ## 配置
 

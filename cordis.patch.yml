@@ -1,4 +1,4 @@
-# dsh-balance-badge bundle patch: mounts the client-only balance bar plugin.
+# @heshih433-oss/dsh-balance-badge bundle patch: mounts the client-only balance bar plugin.
 - insert:
     - id: ui-balance-badge
-      name: "dsh-balance-badge"
+      name: "@heshih433-oss/dsh-balance-badge"
