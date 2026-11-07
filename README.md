@@ -4,7 +4,7 @@
 
 仓库名：`deepseek-harness-balance-badge`
 
-> **安装时注意**：本插件的包名是 `@heshih433-oss/dsh-balance-badge`。npm 上已有一个同名旧包 `dsh-balance-badge`（作者 eatone），它是在右下角显示余额的另一个插件；不要在插件页按 `dsh-balance-badge` 安装，否则装到的是那个旧包。
+> **安装时注意**：本插件的包名是 `@heshih433-oss/dsh-balance-badge`。npm 上还有一个未加作用域的旧包 `dsh-balance-badge`（作者 eatone），它是在右下角显示余额的另一个插件；不要在插件页按 `dsh-balance-badge` 安装，否则装到的是那个旧包。
 
 ## 效果
 
