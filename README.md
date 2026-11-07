@@ -23,9 +23,18 @@
 ### 方式一：插件页安装（推荐）
 
 1. 打开侧边栏 **插件（Plugins）**。
-2. 点击 **添加插件（Add plugin）**。
-3. 填入本仓库目录的绝对路径。
-4. 安装完成后点击 **立即启用（Enable now）**。
+2. 如果之前装过 npm 上的 `dsh-balance-badge`，先卸载它，避免出现两条余额栏。
+3. 点击 **添加插件（Add plugin）**。
+4. 填入 GitHub 仓库地址：
+
+   ```text
+   https://github.com/heshih433-oss/deepseek-harness-balance-badge
+   ```
+
+   也可以填 `github:heshih433-oss/deepseek-harness-balance-badge`，或本仓库目录的绝对路径（本地开发时）。
+5. 安装完成后点击 **立即启用（Enable now）**。
+
+> 不要填 `dsh-balance-badge` 或 `@heshih433-oss/dsh-balance-badge`：前者会装到 npm 上别人的旧包；后者目前没有发布到 npm，按名字安装会失败。
 
 ### 方式二：写入 desktop profile
 
